@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from AES import AES
 import os 
 import random
