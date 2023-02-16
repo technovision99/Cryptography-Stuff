@@ -56,8 +56,8 @@ impl Ciphertext {
                         }
                     }
                     let payload = guess ^ self.index as u8;
-                    self.plaintext.push(payload); // [1 2]
-                    //println!("{}",payload); // [ 0 1 2]
+                    self.plaintext.push(payload); ]
+
                     println!("{}",guess);
                     if self.index ==16 {
                         self.ciphertext_blocks[block_num] = block; //no need to do anything more
@@ -93,16 +93,9 @@ impl Ciphertext {
 }
 //bU+s"d^8AWZ
 fn main() {
-    let mut my_vec = vec![0, 2, 52, 27, 90, 87, 65, 56, 94, 100, 34, 115, 43, 85, 4, 98];
-    my_vec.reverse();
-    println!("{:?}", my_vec);
-    let decrypted = std::str::from_utf8(&my_vec).expect("just bad");
-    println!("{}",decrypted);
     let mut test: Ciphertext = Ciphertext::build_ct(TO_DECRYPT);
     println!("{:?}",test.ciphertext_blocks);
     test.decrypt_one_block(2);
-
-    //test.plaintext.reverse();
     println!("{:?}", test.plaintext);
     let pt = std::str::from_utf8(&test.plaintext).expect("wrong");
     println!("{}",pt)
