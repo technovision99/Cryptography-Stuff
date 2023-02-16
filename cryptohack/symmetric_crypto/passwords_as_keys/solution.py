@@ -11,7 +11,7 @@ def decrypt(ciphertext, password_hash):
         decrypted = cipher.decrypt(ciphertext)
     except ValueError as e:
         return {"error": str(e)}
-    
+
     return {"plaintext": decrypted.hex()}
 
 with open("words.txt") as f:
@@ -26,6 +26,6 @@ for word in words:
         if "crypto" in decoded:
             print(KEY)
             print(decoded)
-            break 
+            break
     except:
         continue

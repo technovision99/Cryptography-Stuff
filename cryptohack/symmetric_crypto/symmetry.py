@@ -25,5 +25,4 @@ def solve():
     pt = bytes_xor(ct_bytes,iv_bytes)
     print(pt.decode("ASCII"))
     
-# 63727970746f7b3066625f31355f35796d6d3337723163346c5f2121213131217d
 solve()
